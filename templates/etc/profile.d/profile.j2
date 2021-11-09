@@ -1,6 +1,6 @@
 # {{ ansible_managed }}
 #!/usr/bin/sh
 
-{% if item.content is defined %}
-{{ item.content }}
+{% if item.value.content is defined %}
+{{ item.value.content }}
 {% endif %}
