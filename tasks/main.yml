@@ -1,0 +1,12 @@
+---
+# tasks file for role
+- name: Create profile configuration files
+  template:
+    src: etc/profile.d/profile.j2
+    dest: "/etc/profile.d/{{ item.key }}.sh"
+    owner: root
+    group: root
+    mode: 0644
+  with_dict: "{{ profile_profile_d_files }}"
+  tags:
+    - profile
