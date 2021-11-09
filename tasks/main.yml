@@ -7,6 +7,7 @@
     owner: root
     group: root
     mode: 0644
-  with_dict: "{{ profile_profile_d_files }}"
+  with_items: "{{ profile_profile_d_files }}"
+  when: profile_profile_d_files is defined
   tags:
     - profile
